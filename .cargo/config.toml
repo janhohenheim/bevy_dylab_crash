@@ -1,0 +1,10 @@
+[build]
+rustc-wrapper = "C:/Users/conta/.cargo/bin/sccache.exe"
+
+[target.x86_64-pc-windows-msvc]
+linker = "rust-lld.exe" # Use LLD Linker
+rustdocflags = ["-Clinker=rust-lld.exe"] # Rustdoc does not use the same linker as the compiler by default.
+rustflags = [
+    "-Zshare-generics=n", # (Nightly) Needs to be disabled when using dynamic linking.
+    "-Zthreads=0", # (Nightly) Use improved multithreading with the recommended amount of threads.
+]
