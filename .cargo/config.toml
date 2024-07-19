@@ -1,6 +1,3 @@
-[build]
-rustc-wrapper = "C:/Users/conta/.cargo/bin/sccache.exe"
-
 [target.x86_64-pc-windows-msvc]
 linker = "rust-lld.exe" # Use LLD Linker
 rustdocflags = ["-Clinker=rust-lld.exe"] # Rustdoc does not use the same linker as the compiler by default.
